@@ -1,0 +1,44 @@
+/**********************/
+li{list-style:none;}
+a{text-decoration: none;}
+img{border: 0;}
+input{border: 0;}
+
+body,html{height:100%;}
+#home{
+    background: url("../images/banner_01.jpg") no-repeat ;
+    height:100%;
+    width:100%;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.company{
+    text-align: center;
+    width:100%;
+    position: absolute;
+    top:50%;
+    left: 0;
+    color:#fff;
+}
+.intro{
+
+
+}
+.header .navbar{margin-bottom: 0;}
+
+.header .icon-bar{background: #222;}
+
+#AboutUs{text-align: center;}
+.pfblock{padding:120px 0 100px;background: #f1f1f1;}
+.pfblock .about h2{display: inline;color: #1d1d1d}
+.pfblock .about span{color:#1d1d1d;}
+.pfblock .p{line-height:41px;margin: 0;}
+.pfblock .introduce p{color:#383838;line-height:25px;}
+.pfblock .introduce .img{
+    background: url("../images/introduce_03.png") no-repeat;
+    background-position: center;
+}
