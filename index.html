@@ -4,12 +4,55 @@
     <meta charset="UTF-8">
     <title>重庆全心协力科技有限公司</title>
     <link href="css/style.css"  rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
     <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="css/simple-line-icons.css" rel="stylesheet" media="screen">
+    <!--<link href="css/simple-line-icons.css" rel="stylesheet" media="screen">-->
     <script src="js/jquery-2.2.0.min.js"></script>
     <script>
 
+        $(function (){
+            (function(){
+                var nav=$(".header");
+                var home=$("#home").height();
+                var win=$(window);
+                var sc=$(document);
+                win.scroll(function(){
+                    if(sc.scrollTop()>home){
+                        nav.addClass("navfixed");
+                    }else {
+                        nav.removeClass("navfixed")
+                    }
+                });
+            })();
+
+
+            $("#nav").find("a").click(function(){
+                $("#nav").find("a").removeClass("c");
+                $(this).addClass("c")
+            });
+
+            var oP=$(".intro i");
+            oP.animate({"opacity":0,"top":"50"},1200,function(){
+                o()
+            });
+            function o(){
+                if(oP.top==0){
+                    return
+                }else {
+                    oP.css({"top":"30px","opacity":"1"});
+                    oP.animate({"opacity":0,"top":"50"},1200,function(){
+                        o()
+                    });
+                }
+            }
+
+
+
+
+
+
+
+        })
     </script>
 
 </head>
@@ -20,35 +63,32 @@
             <h1>重庆市全心协力科技有限公司</h1>
             <span>ChongQing Whole Hearted Techlology Co., Ltd </span>
         </div>
-        <a href="#AboutUs" class="intro">
-            <img src="images/oval.png"/>
-        </a>
-
+        <div class="intro">
+            <a href="#AboutUs" class="intro-a">
+                <img src="images/oval.png"/>
+                <i class="fa fa-angle-down"></i>
+            </a>
+        </div>
     </div>
     <div class="header">
-        <div class="navbar navbar-custom">
-
-                    <a class="navbar-brand" href="index.html">全心协力科技有限公司</a>
-
-                <div>
-                    <ul class="nav">
-                        <li>
-                            <a href="#home">首页/HOME</a>
-                        </li>
-                        <li>
-                            <a href="#AboutUs">关于我们/ABOUT US</a>
-                        </li>
-                        <li>
-                            <a href="#services">服务项目/SERVICES</a>
-                        </li>
-                        <li>
-                            <a href="#partners">合作伙伴/PARTNERS</a>
-                        </li>
-
-                    </ul>
-                </div>
-
+        <div class="inner">
+            <a class="logo" href="index.html">全心协力科技有限公司</a>
+            <ul id="nav">
+                <li>
+                    <a href="#home">首页/HOME</a>
+                </li>
+                <li>
+                    <a href="#AboutUs">关于我们/ABOUT US</a>
+                </li>
+                <li>
+                    <a href="#services">服务项目/SERVICES</a>
+                </li>
+                <li>
+                    <a href="#partners">合作伙伴/PARTNERS</a>
+                </li>
+            </ul>
         </div>
+
 
     </div>
 
@@ -77,19 +117,20 @@
             <p class="p">服务项目</p>
         </div>
         <div class="project">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-4">
-                    fgsdfgdfgsdgsd
+            <div class="inner">
+                <div class="project1">
+                    dfghsxdhgdfx
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-4">
-                    dfgsdfgsdgsdg
+                <div class="project2">
+                    sdgsdfgsdg
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-4">
-                    dgvzsdgzsdgsdzg
+                <div class="project3">
+                    sdgfgdfgdf
                 </div>
+                <div class="clear"></div>
             </div>
-
         </div>
+
 
 
 
