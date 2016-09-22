@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
     <title>重庆全心协力科技有限公司</title>
     <link href="css/style.css"  rel="stylesheet" media="screen">
     <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
     <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
     <!--<link href="css/simple-line-icons.css" rel="stylesheet" media="screen">-->
-    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
     <script>
 
         $(function (){
@@ -26,25 +27,51 @@
             })();
 
 
-            $("#nav").find("a").click(function(){
-                $("#nav").find("a").removeClass("c");
+            var nav_a=$("#nav").find("a");
+            nav_a.click(function(){
+                nav_a.removeClass("c");
                 $(this).addClass("c")
             });
+            nav_a.mouseover(function(){
+                $(this).addClass("c")
+            });
+            nav_a.mouseout(function () {
+                $(this).removeClass("c")
+            });
 
-            var oP=$(".intro i");
-            oP.animate({"opacity":0,"top":"50"},1200,function(){
+
+
+
+            var oI=$(".intro i");
+            oI.animate({"opacity":0,"top":"50"},1200,function(){
                 o()
             });
             function o(){
-                if(oP.top==0){
+                if(oI.top==0){
                     return
                 }else {
-                    oP.css({"top":"30px","opacity":"1"});
-                    oP.animate({"opacity":0,"top":"50"},1200,function(){
+                    oI.css({"top":"30px","opacity":"1"});
+                    oI.animate({"opacity":0,"top":"50"},1200,function(){
                         o()
                     });
                 }
             }
+
+            var oP=$(".project-a");
+            oP.mouseover(function(){
+                $(this).stop().animate({
+                    "width":"310px","height":"522px","top":"-30px"
+                },1000)
+            });
+            oP.mouseout(function(){
+                $(this).stop().animate({
+                    "width":"298px","height":"474px","top":"0"
+                },1000)
+            });
+
+
+
+
 
 
 
@@ -58,8 +85,11 @@
 </head>
 <body>
     <div id="home" class="pfblock-image screen-height">
+        <div class="img"><img src="images/banner-bg_01.png"/> </div>
         <div class="company">
-            <div class="logo"></div>
+            <div class="logo">
+                <img src="images/logo.png"/>
+            </div>
             <h1>重庆市全心协力科技有限公司</h1>
             <span>ChongQing Whole Hearted Techlology Co., Ltd </span>
         </div>
@@ -118,29 +148,35 @@
         </div>
         <div class="project">
             <div class="inner">
-                <div class="project1">
-                    dfghsxdhgdfx
+                <div class="project1 project-a">
+                    <div class="project-a-title">
+
+                    </div>
+                    项目1
                 </div>
-                <div class="project2">
-                    sdgsdfgsdg
+                <div class="project2 project-a">
+                    项目2
                 </div>
-                <div class="project3">
-                    sdgfgdfgdf
+                <div class="project3 project-a">
+                    项目3
                 </div>
                 <div class="clear"></div>
             </div>
         </div>
-
-
-
-
     </div>
     <div id="partners">
-
+        <div class="partners-title">
+            <div class="title">
+                <span>SOME OF OUR GREAT PARTNERS</span>
+                <h2> PARTNERS</h2>
+            </div>
+            <p class="p">合作伙伴</p>
+        </div>
     </div>
     <div id="footer">
 
     </div>
+
 
 </body>
 </html>
