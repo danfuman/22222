@@ -5,40 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
     <title>重庆全心协力科技有限公司</title>
     <link href="css/style.css"  rel="stylesheet" media="screen">
-    <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
     <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <!--<link href="css/simple-line-icons.css" rel="stylesheet" media="screen">-->
     <script src="js/jquery-1.9.1.min.js"></script>
     <script>
 
         $(function (){
-            (function(){
-                var nav=$(".header");
-                var home=$("#home").height();
-                var win=$(window);
-                var sc=$(document);
-                win.scroll(function(){
-                    if(sc.scrollTop()>home){
-                        nav.addClass("navfixed");
-                    }else {
-                        nav.removeClass("navfixed")
-                    }
-                });
-            })();
-
-
             var nav_a=$("#nav").find("a");
             nav_a.click(function(){
                 nav_a.removeClass("c");
                 $(this).addClass("c")
             });
-            nav_a.mouseover(function(){
-                $(this).addClass("c")
-            });
-            nav_a.mouseout(function () {
-                $(this).removeClass("c")
-            });
-
 
 
 
@@ -69,22 +45,81 @@
                 },1000)
             });
 
+//          阴影
+            $(".ul").find("a").mouseover(function(){
+                $(".ul").find("a").removeClass("shadow");
+               $(this).addClass("shadow");
+            });
+            $(".ul").find("a").mouseout(function(){
+               $(this).removeClass("shadow");
+            });
 
 
 
+//            (function(){
+//                var nav=$(".header");
+//                var home=$("#home").height();
+//                var win=$(window);
+//                var sc=$(document);
+//                win.scroll(function(){
+//                    if(sc.scrollTop()>home){
+//                        nav.addClass("navfixed");
+//                    }else {
+//                        nav.removeClass("navfixed")
+//                    }
+//                });
+//            })();
 
+            var nav=$(".header");
+            var oNav=$("#nav").find("li");
+            var oC=$("body");
+            var oChange=oC.children;
+            var num = nav.offset().top;
+            var oA = nav.height();
+            var win=$(window);
+            var sc=$(document);
+            var home=$("#home").height();
+            win.scroll(function(){
+                var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                if(scrollTop>home){
+                    nav.addClass("navfixed");
+                }else{
+                    nav.removeClass("navfixed");
+                }
+                //当导航与相应文档接触的时候自动切换
+                //method1
+//                for(var i=0;i<oNav.length;i++){
+//                    for(var p=0; p<oChange.length;p++)
+//                    if( scrollTop + oA >= $(oChange[p]).eq(1).height()){
+////                        console.log($(oChange[p]).height())
+////                        console.log(oChange[i].offsetTop)
+//                        for(var j=0;j<oNav.length;j++){
+//                            oNav[j].addClass = "";
+//                        }
+//                        oNav[i].addClass = "cur";
+//
+//                    }
+//                }
+//                var wst =  $(window).scrollTop(); //滚动条距离顶端值
+//                for (i=1; i<5; i++){             //加循环
+//                    if($("#a"+i).offset().top<=wst){ //判断滚动条位置
+//                        $('#nav a').removeClass("cur"); //清除c类
+//                        $("#a"+i+i).addClass("cur");	//给当前导航加c类
+//                    }
+//                }
+            });
 
-
-
-
-
+            $('.li1,.li2,.li3,.li4').click(function(){
+                var cl = $(this).attr('class');
+                $('html,body').animate({scrollTop: $('.'+cl+'change').offset().top}, 1500);
+            })
 
         })
     </script>
 
 </head>
 <body>
-    <div id="home" class="pfblock-image screen-height">
+    <div id="home" class="pfblock-image screen-height a_change">
         <div class="img"><img src="images/banner-bg_01.png"/> </div>
         <div class="company">
             <div class="logo">
@@ -104,16 +139,16 @@
         <div class="inner">
             <a class="logo" href="index.html">全心协力科技有限公司</a>
             <ul id="nav">
-                <li>
+                <li  class="li1">
                     <a href="#home">首页/HOME</a>
                 </li>
-                <li>
+                <li class="li2">
                     <a href="#AboutUs">关于我们/ABOUT US</a>
                 </li>
-                <li>
+                <li class="li3">
                     <a href="#services">服务项目/SERVICES</a>
                 </li>
-                <li>
+                <li class="li4">
                     <a href="#partners">合作伙伴/PARTNERS</a>
                 </li>
             </ul>
@@ -122,7 +157,7 @@
 
     </div>
 
-    <div id="AboutUs"  class="pfblock">
+    <div id="AboutUs"  class="pfblock b_change">
             <div class="title">
                 <h2>ABOUT</h2>
                 <span>US</span>
@@ -138,7 +173,7 @@
             </div>
 
     </div>
-    <div id="services">
+    <div id="services" class="c_change">
         <div class="services-title">
             <div class="title">
                 <span>What we do!</span>
@@ -164,7 +199,7 @@
             </div>
         </div>
     </div>
-    <div id="partners">
+    <div id="partners" class="d_change">
         <div class="partners-title">
             <div class="title">
                 <span>SOME OF OUR GREAT PARTNERS</span>
@@ -172,11 +207,29 @@
             </div>
             <p class="p">合作伙伴</p>
         </div>
+        <div class="img">
+            <div class="inner">
+                <ul class="ul">
+                    <li>
+                        <a href="#"> <img src="images/partners_04.jpg"/></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="images/partners_06.jpg"/></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="images/partners_10.jpg"/></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="images/partners_11.jpg"/></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
+    <div class="clear"></div>
     <div id="footer">
-
+        <img src="images/footer.png"/>
     </div>
-
 
 </body>
 </html>
