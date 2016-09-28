@@ -6,6 +6,7 @@
     <title>重庆全心协力科技有限公司</title>
     <link href="css/style.css"  rel="stylesheet" media="screen">
     <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/media.css"  rel="stylesheet" media="screen">
     <script src="js/jquery-1.9.1.min.js"></script>
     <script>
 
@@ -13,11 +14,11 @@
             var nav_a=$("#nav").find("a");
             nav_a.click(function(){
                 nav_a.removeClass("c");
-                $(this).addClass("c")
+                $(this).addClass("c");
             });
 
 
-
+            //按钮动画
             var oI=$(".intro i");
             oI.animate({"opacity":0,"top":"50"},1200,function(){
                 o()
@@ -32,7 +33,6 @@
                     });
                 }
             }
-
             var oP=$(".project-a");
             oP.mouseover(function(){
                 $(this).stop().animate({
@@ -54,72 +54,78 @@
                $(this).removeClass("shadow");
             });
 
+            (function(){
+                var nav=$(".header");
+                var home=$("#home").height();
+                var win=$(window);
+                var sc=$(document);
+                win.scroll(function(){
+                    if(sc.scrollTop()>home){
+                        nav.addClass("navfixed");
+                    }else {
+                        nav.removeClass("navfixed");
+                    }
+                });
+            })();
 
-
-//            (function(){
-//                var nav=$(".header");
-//                var home=$("#home").height();
-//                var win=$(window);
-//                var sc=$(document);
-//                win.scroll(function(){
-//                    if(sc.scrollTop()>home){
-//                        nav.addClass("navfixed");
-//                    }else {
-//                        nav.removeClass("navfixed")
-//                    }
-//                });
-//            })();
-
-            var nav=$(".header");
-            var oNav=$("#nav").find("li");
-            var oC=$("body");
-            var oChange=oC.children;
-            var num = nav.offset().top;
-            var oA = nav.height();
-            var win=$(window);
-            var sc=$(document);
-            var home=$("#home").height();
-            win.scroll(function(){
-                var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-                if(scrollTop>home){
-                    nav.addClass("navfixed");
-                }else{
-                    nav.removeClass("navfixed");
-                }
-                //当导航与相应文档接触的时候自动切换
-                //method1
-//                for(var i=0;i<oNav.length;i++){
-//                    for(var p=0; p<oChange.length;p++)
-//                    if( scrollTop + oA >= $(oChange[p]).eq(1).height()){
-////                        console.log($(oChange[p]).height())
-////                        console.log(oChange[i].offsetTop)
-//                        for(var j=0;j<oNav.length;j++){
-//                            oNav[j].addClass = "";
-//                        }
-//                        oNav[i].addClass = "cur";
-//
-//                    }
-//                }
-//                var wst =  $(window).scrollTop(); //滚动条距离顶端值
-//                for (i=1; i<5; i++){             //加循环
-//                    if($("#a"+i).offset().top<=wst){ //判断滚动条位置
-//                        $('#nav a').removeClass("cur"); //清除c类
-//                        $("#a"+i+i).addClass("cur");	//给当前导航加c类
-//                    }
-//                }
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(window).scrollTop()>100){
+                        $(".top").fadeIn(1500);
+                    }else{
+                        $(".top").fadeOut(500);
+                    }
+                });
+                /*点击回到顶部*/
+                $('.top').click(function(){
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 500);
+                });
             });
 
-            $('.li1,.li2,.li3,.li4').click(function(){
-                var cl = $(this).attr('class');
-                $('html,body').animate({scrollTop: $('.'+cl+'change').offset().top}, 1500);
-            })
+            //点击li跳转相对应的页面
+            $(window).scroll(function () {
+                var scrollTop = $(document).scrollTop();
+                var documentHeight = $(document).height();
+                var windowHeight = $(window).height();
+                var contentItems = $(".change");
+                var currentItem = "";
+                if (scrollTop+windowHeight==documentHeight) {
+                    currentItem= "#" + contentItems.last().attr("id");
+                }else{
+                    contentItems.each(function () {
+                        var contentItem = $(this);
+                        var offsetTop = contentItem.offset().top;
+                        if (scrollTop > offsetTop - 50) {
+                            currentItem = "#" + contentItem.attr("id");
+                        }
+                    });
+                }
+                if (currentItem != $("#nav").find("li").attr("href")) {
+                    $("#nav").find("a").removeClass("c");
+                    $("#nav").find("[href=" + currentItem + "]").addClass("c");
+                }
+            });
+            //滑动效果
+            $(document).ready(function() {
+                $("#nav a,.intro-a").click(function() {
+                    $("html, body").animate({
+                        scrollTop: $($(this).attr("href")).offset().top + "px"
+                    }, {
+                        duration: 500,
+                        easing: "swing"
+                    });
+                    return false;
+                });
+            });
 
         })
     </script>
 
 </head>
 <body>
-    <div id="home" class="pfblock-image screen-height a_change">
+    <div id="home" class="pfblock-image screen-height change">
         <div class="img"><img src="images/banner-bg_01.png"/> </div>
         <div class="company">
             <div class="logo">
@@ -137,27 +143,29 @@
     </div>
     <div class="header">
         <div class="inner">
-            <a class="logo" href="index.html">全心协力科技有限公司</a>
+            <a class="logo" href="index.html">
+                <span><img src="images/juxing.png"/> </span>
+                重庆全心协力科技有限公司
+            </a>
             <ul id="nav">
-                <li  class="li1">
+                <li>
                     <a href="#home">首页/HOME</a>
                 </li>
-                <li class="li2">
+                <li>
                     <a href="#AboutUs">关于我们/ABOUT US</a>
                 </li>
-                <li class="li3">
+                <li>
                     <a href="#services">服务项目/SERVICES</a>
                 </li>
-                <li class="li4">
+                <li>
                     <a href="#partners">合作伙伴/PARTNERS</a>
                 </li>
             </ul>
+            <div class="nav-a"><a href="javascript:;" ><img src="images/1111.png"/> </a></div>
         </div>
-
-
     </div>
 
-    <div id="AboutUs"  class="pfblock b_change">
+    <div id="AboutUs"  class="pfblock change">
             <div class="title">
                 <h2>ABOUT</h2>
                 <span>US</span>
@@ -173,7 +181,7 @@
             </div>
 
     </div>
-    <div id="services" class="c_change">
+    <div id="services" class="change">
         <div class="services-title">
             <div class="title">
                 <span>What we do!</span>
@@ -199,10 +207,10 @@
             </div>
         </div>
     </div>
-    <div id="partners" class="d_change">
+    <div id="partners" class="change">
         <div class="partners-title">
             <div class="title">
-                <span>SOME OF OUR GREAT PARTNERS</span>
+                <span>SOME OF OUR GREAT</span>
                 <h2> PARTNERS</h2>
             </div>
             <p class="p">合作伙伴</p>
@@ -211,16 +219,16 @@
             <div class="inner">
                 <ul class="ul">
                     <li>
-                        <a href="#"> <img src="images/partners_04.jpg"/></a>
+                        <a href="javascript:;"> <img src="images/partners_04.jpg"/></a>
                     </li>
                     <li>
-                        <a href="#"> <img src="images/partners_06.jpg"/></a>
+                        <a href="javascript:;"> <img src="images/partners_06.jpg"/></a>
                     </li>
                     <li>
-                        <a href="#"> <img src="images/partners_10.jpg"/></a>
+                        <a href="javascript:;"> <img src="images/partners_10.jpg"/></a>
                     </li>
                     <li>
-                        <a href="#"> <img src="images/partners_11.jpg"/></a>
+                        <a href="javascript:;"> <img src="images/partners_11.jpg"/></a>
                     </li>
                 </ul>
             </div>
@@ -229,6 +237,10 @@
     <div class="clear"></div>
     <div id="footer">
         <img src="images/footer.png"/>
+    </div>
+
+    <div class="top">
+        <a href="javascript:;"><img src="images/top.png"/> </a>
     </div>
 
 </body>
