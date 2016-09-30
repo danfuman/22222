@@ -14,7 +14,8 @@
     #home .company{position: absolute;top:20%;}
     #home .company .logo{width:100px;height:100px;}
     #home .company .logo img{width:100%;height:100%;}
-    #home .company h1{font-size: 12px;}
+    #home .company h1{font-size: 16px;}
+    #home .company span{font-size: 12px;}
     #nav{display:none;}
     .nav-b{display:block;}
     #AboutUs .img img{width:100%;height:100%;}
