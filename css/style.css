@@ -13,7 +13,7 @@ i{font-style: normal;}
 
 body,html{height:100%;}
 #home{
-    /*background: url("../images/banner_01.png") no-repeat ;*/
+    background: url("../images/banner_01.png") no-repeat ;
     height:100%;
     width:100%;
     background-attachment: fixed;
