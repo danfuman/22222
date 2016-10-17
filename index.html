@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
-    <title>重庆全心协力科技有限公司</title>
-    <link href="css/style.css"  rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="css/media.css"  rel="stylesheet" media="screen">
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<title>重庆全心协立科技有限公司</title>
+<link href="css/style.css"  rel="stylesheet" media="screen">
+<link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+<link href="css/media.css"  rel="stylesheet" media="screen">
+<link href="css/style1.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/me.css"/>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script>
 
         $(function (){
             var nav_a=$("#nav").find("a");
@@ -122,145 +125,160 @@
             });
 
 
-            function IsPC() {
-                var userAgentInfo = navigator.userAgent;
-                var Agents = ["Android", "iPhone",
-                    "SymbianOS", "Windows Phone",
-                    "iPad", "iPod"];
-                var flag = true;
-                for (var v = 0; v < Agents.length; v++) {
-                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                        flag = false;
-                        break;
-                    }
+            $(".nav-a").click(function(){
+
+                if($(".small-nav").is(":hidden")){
+                    $(".small-nav").show();
+                    $(".header").css("height","254px");
+
+                }else {
+                    $(".small-nav").hide();
+                    $(".header").css("height","50px");
                 }
-                return flag;
-            }
-            IsPC();
+            })
+
 
         })
     </script>
-
 </head>
 <body>
-    <div id="home" class="pfblock-image screen-height change">
-        <!--<div class="img"><img src="images/banner_01.png"/> </div>-->
-        <div class="company">
-                <div class="logo">
-                    <img src="images/logo.png"/>
-                </div>
-                <h1>重庆市全心协力科技有限公司</h1>
-                <span>ChongQing Whole Hearted Techlology Co., Ltd </span>
-        </div>
-        <div class="intro">
-            <a href="#AboutUs" class="intro-a">
-                <img src="images/oval.png"/>
-                <i class="fa fa-angle-down"></i>
-            </a>
-        </div>
-    </div>
-    <div class="header">
-        <div class="inner">
-            <a class="logo" href="index.html">
-                <span><img src="images/juxing.png"/> </span>
-                重庆全心协力科技有限公司
-            </a>
-            <ul id="nav">
-                <li>
-                    <a href="#home">首页/HOME</a>
-                </li>
-                <li>
-                    <a href="#AboutUs">关于我们/ABOUT US</a>
-                </li>
-                <li>
-                    <a href="#services">服务项目/SERVICES</a>
-                </li>
-                <li>
-                    <a href="#partners">合作伙伴/PARTNERS</a>
-                </li>
-            </ul>
-            <!--<div class="nav-a"><a href="javascript:;" ><img src="images/1111.png"/> </a></div>-->
-        </div>
-    </div>
-
-    <div id="AboutUs"  class="pfblock change">
-            <div class="title">
-                <h2>ABOUT</h2>
-                <span>US</span>
-            </div>
-            <p class="p">关于我们</p>
-            <div class="introduce">
-                <p>在全心协立，我们的使命就是成为一家激发和满足您好奇心的公司。</p>
-                <p>我们在产品、内容与服务方面的无尽激情， 和对创新的不懈追求， 让我们创造出只有索尼才能提供的前所未有的、新的兴奋和娱乐。</p>
-                <p>开创独特的新鲜文化与体验。一切所为，均为与您情感相系。</p>
-                <div class="img">
-                    <img src="images/asd.png"/>
-                </div>
-            </div>
-
-    </div>
-    <div id="services" class="change">
-        <div class="services-title">
-            <div class="title">
-                <span>What we do!</span>
-                <h2>SERVICES</h2>
-            </div>
-            <p class="p">服务项目</p>
-        </div>
-        <div class="project">
-            <div class="inner">
-                <div class="project1 project-a">
-                    项目1
-                </div>
-                <div class="project2 project-a">
-                    项目2
-                </div>
-                <div class="project3 project-a">
-                    项目3
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <div id="partners" class="change">
-        <div class="partners-title">
-            <div class="title">
-                <span>SOME OF OUR GREAT</span>
-                <h2> PARTNERS</h2>
-            </div>
-            <p class="p">合作伙伴</p>
-        </div>
-        <div class="img">
-            <div class="inner">
-                <ul class="ul">
-                    <li>
-                        <a href="javascript:;"> <img src="images/wk_04.jpg"/></a>
-                        <i></i>
-                    </li>
-                    <li>
-                        <a href="javascript:;"> <img src="images/partners_06.jpg"/></a>
-                        <i></i>
-                    </li>
-                    <li>
-                        <a href="javascript:;"> <img src="images/partners_10.jpg"/></a>
-                        <i></i>
-                    </li>
-                    <li>
-                        <a href="javascript:;"> <img src="images/partners_11.jpg"/></a>
-                        <i></i>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div id="home" class="pfblock-image screen-height change">
+  <!--<div class="img"><img src="images/banner_01.png"/> </div>-->
+  <div class="company">
+    <div class="logo"> <img src="images/logo.png"/> </div>
+    <h1>重庆市全心协力科技有限公司</h1>
+    <span>ChongQing Whole Hearted Techlology Co., Ltd </span> </div>
+  <div class="intro"> <a href="#AboutUs" class="intro-a"> <img src="images/oval.png"/> <i class="fa fa-angle-down"></i> </a> </div>
+</div>
+<div class="header">
+  <div class="inner"> <a class="logo" href="index.html"> 重庆全心协立科技有限公司 </a>
+    <ul id="nav" class="nav">
+      <li> <a href="#home">首页/HOME</a> </li>
+      <li> <a href="#AboutUs">关于我们/ABOUT US</a> </li>
+      <li> <a href="#services">服务项目/SERVICES</a> </li>
+      <li> <a href="#partners">合作伙伴/PARTNERS</a> </li>
+    </ul>
     <div class="clear"></div>
-    <div id="footer">
-        <img src="images/footer.png"/>
-    </div>
+    <ul class="small-nav">
+      <li> <a href="#home">首页/HOME</a> </li>
+      <li> <a href="#AboutUs">关于我们/ABOUT US</a> </li>
+      <li> <a href="#services">服务项目/SERVICES</a> </li>
+      <li> <a href="#partners">合作伙伴/PARTNERS</a> </li>
+    </ul>
+    <div class="nav-a"><a href="javascript:;" ><img src="images/1111.png"/> </a></div>
+  </div>
+</div>
+<div id="AboutUs"  class="pfblock change">
+  <div class="title">
+    <h2>ABOUT</h2>
+    <span>US</span> </div>
+  <p class="p">关于我们</p>
+  <div class="introduce">
+    <p>全心协力科技</p>
+    <p>全心协立科技有限公司成立于2016年7月。公司本着服务至上、服务为本的经营理念，为各公司提供高效的软件系统、硬件维护解决方案。</p>
+    <p>为企业提高管理效率、产品推广、企业形象推广等提供良好的工具，为企业在互联网时代提供有力的竞争保障，从而帮助企业创造更大经济效益。</p>
+    <div class="img"> <img src="images/asd.png"/> </div>
+  </div>
+</div>
 
-    <div class="top">
-        <a href="javascript:;"><img src="images/top.png"/> </a>
+<div id="services" class="change">
+  <div class="services-title">
+    <div class="title"> <span>What we do!</span>
+      <h2>SERVICES</h2>
     </div>
-
+    <p class="p">服务项目</p>
+  </div>
+  <div class="row mt">
+    <div class="col-lg-2 col-lg-offset-1 hidden-xs hidden-md hidden-sm">
+      <div class="seth_w">
+        <div class="row text-center pt">
+          <div class="circle-icon">
+            <div class="weico1"></div>
+          </div>
+        </div>
+        <div class="row text-center ft11 pt1">移动应用开发</div>
+        <div class="row">
+          <div class="setft">手机APP开发，包括安卓[Android]平台和苹果[IOS]平台，具体应用根据客户需求定制开发，例如商城、订餐系统等。 </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 hidden-xs hidden-md hidden-sm">
+      <div class="seth_w">
+        <div class="row text-center pt">
+          <div class="circle-icon">
+            <div class="weico2"></div>
+          </div>
+        </div>
+        <div class="row text-center ft11 pt1">微信公众号开发</div>
+        <div class="row">
+          <div class="setft">企业微信公众号二次开发，具体根据客户需求定制开发，例如公司产品宣传、产品销售、在线预约等。 </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 hidden-xs hidden-md hidden-sm">
+      <div class="seth_w">
+        <div class="row text-center pt">
+          <div class="circle-icon">
+            <div class="weico3"></div>
+          </div>
+        </div>
+        <div class="row text-center ft11 pt1">ERP系统开发</div>
+        <div class="row">
+          <div class="setft">ERP系统集信息技术与先进管理思想于一身，以系统化管理思想，为企业员工和决策层提供决策手段的平台。 </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 hidden-xs hidden-md hidden-sm">
+      <div class="seth_w">
+        <div class="row text-center pt">
+          <div class="circle-icon">
+            <div class="weico4"></div>
+          </div>
+        </div>
+        <div class="row text-center ft11 pt1">CRM系统开发</div>
+        <div class="row">
+          <div class="setft">CRM系统利用信息科学技术，实现市场营销、销售、服务等活动的自动化，使企业能更搞笑的为客户提供满意、周到的服务，从而提高客户满意度、忠诚度。</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 hidden-xs hidden-md hidden-sm">
+      <div class="seth_w">
+        <div class="row text-center pt">
+          <div class="circle-icon">
+            <div class="weico5"></div>
+          </div>
+        </div>
+        <div class="row text-center pt1 ft11">企业网站开发</div>
+        <div class="row">
+          <div class="setft">企业网站是公司的形象、信息发布、新闻公告、人员招聘，甚至于产品销售的重要平台。我们公司为企业开发门户网站，摆脱传统的模板式开发，专门为客户提供定制开发，可以更好的提现企业的特色。</div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+<div id="partners" class="change">
+  <div class="partners-title">
+    <div class="title"> <span>SOME OF OUR GREAT</span>
+      <h2> PARTNERS</h2>
+    </div>
+    <p class="p">合作伙伴</p>
+  </div>
+  <div class="img">
+    <div class="inner">
+      <ul class="ul">
+        <li> <a href="javascript:;"> <img src="images/wk_04.jpg"/></a> <i></i> </li>
+        <li> <a href="javascript:;"> <img src="images/partners_06.jpg"/></a> <i></i> </li>
+        <li> <a href="javascript:;"> <img src="images/partners_10.jpg"/></a> <i></i> </li>
+        <li> <a href="javascript:;"> <img src="images/partners_11.jpg"/></a> <i></i> </li>
+        <li> <a href="javascript:;" class="yiqi"> <img src="images/yiqi-logo_04.jpg"/></a> <i></i> </li>
+        <li> <a href="javascript:;"> <img src="images/df-logo_03.jpg"/></a> <i></i> </li>
+		   <li> <a href="javascript:;"> <img src="images/jf-logo_03.jpg"/></a> <i></i> </li>
+		    <li> <a href="javascript:;"> <img src="images/nissan-logo_03.jpg"/></a> <i></i> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<div id="footer"> <img src="images/footer.png"/> </div>
+<div class="top"> <a href="javascript:;"><img src="images/top.png"/> </a> </div>
 </body>
 </html>
